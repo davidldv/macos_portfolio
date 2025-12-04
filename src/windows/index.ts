@@ -1,5 +1,19 @@
 import Terminal from "#windows/Terminal"
+import Safari from "#windows/Safari"
+import Resume from "./Resume"
+import Finder from "./Finder"
+import Text from "./Text"
+import Image from "./Image"
+import Contact from "./Contact"
+import Photos from "./Photos"
 
 export {
-  Terminal
+  Terminal,
+  Safari,
+  Resume,
+  Finder,
+  Text,
+  Image,
+  Contact,
+  Photos
 }
