@@ -196,20 +196,20 @@ const photosLinks = [
 const gallery = [
   {
     id: 1,
-    img: "/images/gal1.png",
+    img: "/images/gal1.jpg",
   },
   {
     id: 2,
     img: "/images/gal2.png",
   },
-  {
-    id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
-  },
+  // {
+  //   id: 3,
+  //   img: "/images/gal3.png",
+  // },
+  // {
+  //   id: 4,
+  //   img: "/images/gal4.png",
+  // },
 ];
 
 export {
@@ -223,10 +223,10 @@ export {
   gallery,
 };
 
-const NIKE_PROJECT = {
+const KORU_PROJECT = {
   id: 5,
-  type: "nike",
-  name: "Nike Ecommerce Website Application",
+  type: "koru",
+  name: "Koru Modular Social Network",
   icon: "/images/folder.png",
   kind: "folder",
   position: "top-10 left-5", // icon position inside Finder
@@ -234,44 +234,35 @@ const NIKE_PROJECT = {
   children: [
     {
       id: 1,
-      name: "Nike Project.txt",
+      name: "Koru Project.txt",
       icon: "/images/txt.png",
       kind: "file",
       fileType: "txt",
       position: "top-5 left-10",
       description: [
-        "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
-        "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
-        "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
-        "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+        "The Koru Modular Social Network is a Full-Stack platform that integrates publishing spaces.",
+        "Instead of a simple social network, it integrates blogs, forums, and media sharing into one seamless experience.",
+        "Think of it like walking into a flagship social network—but right from your phone or laptop.",
+        "It's built with Next.js 16, Tailwind and PrismaORM, authentication with Clerk and deployment on Vercel for a fast, reliable experience.",
       ],
     },
     {
       id: 2,
-      name: "nike.com",
+      name: "koru.com",
       icon: "/images/safari.png",
       kind: "file",
       fileType: "url",
-      href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
+      href: "https://koru-livid.vercel.app/",
       position: "top-10 right-20",
     },
     {
       id: 4,
-      name: "nike.png",
+      name: "koru.png",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
       position: "top-52 right-80",
       imageUrl: "/images/project-1.png",
-    },
-    {
-      id: 5,
-      name: "Design.fig",
-      icon: "/images/plain.png",
-      kind: "file",
-      fileType: "fig",
-      href: "https://google.com",
-      position: "top-60 right-20",
     },
   ],
 };
@@ -305,7 +296,7 @@ const AI_PROJECT = {
       icon: "/images/safari.png",
       kind: "file",
       fileType: "url",
-      href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
+      href: "",
       position: "top-20 left-20",
     },
     {
@@ -346,7 +337,7 @@ const FOOD_PROJECT = {
       fileType: "txt",
       position: "top-5 left-10",
       description: [
-        "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
+        "My Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
         "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
         "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
         "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
@@ -358,7 +349,7 @@ const FOOD_PROJECT = {
       icon: "/images/safari.png",
       kind: "file",
       fileType: "url",
-      href: "https://youtu.be/LKrX390fJMw?si=cExkuVhf2DTV9G2-",
+      href: "",
       position: "top-10 right-20",
     },
     {
@@ -376,7 +367,7 @@ const FOOD_PROJECT = {
       icon: "/images/plain.png",
       kind: "file",
       fileType: "fig",
-      href: "https://google.com",
+      href: "https://www.figma.com/design/FIe3i6vwpWeUOvVwno7ua3/Food-Delivery-App?node-id=0-1&p=f",
       position: "top-60 right-20",
     },
   ],
@@ -389,7 +380,7 @@ const WORK_LOCATION = {
   icon: "/icons/work.svg",
   kind: "folder",
   children: [
-    NIKE_PROJECT,
+    KORU_PROJECT,
     AI_PROJECT,
     FOOD_PROJECT,
   ],
@@ -409,7 +400,7 @@ const ABOUT_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/adrian.jpg",
+      imageUrl: "/images/david.jpg",
     },
     {
       id: 2,
@@ -418,16 +409,16 @@ const ABOUT_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-28 right-72",
-      imageUrl: "/images/adrian-2.jpg",
+      imageUrl: "/images/david-2.jpg",
     },
     {
       id: 3,
-      name: "conference-me.png",
+      name: "my-cat.png",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
-      imageUrl: "/images/adrian-3.jpeg",
+      imageUrl: "/images/my-cat.jpg",
     },
     {
       id: 4,
@@ -437,12 +428,12 @@ const ABOUT_LOCATION = {
       fileType: "txt",
       position: "top-60 left-5",
       subtitle: "Meet the Developer Behind the Code",
-      image: "/images/adrian.jpg",
+      image: "/images/david.jpg",
       description: [
-        "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
-        "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
+        "Hey! I’m David 👋, a Full Stack Software Engineer who enjoys building sleek, interactive websites that actually work well.",
+        "I specialize  in React, Next.js, and TypeScript—and I love making things feel smooth, fast, and just a little bit delightful.",
         "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
-        "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+        "Outside of dev work, you'll find me learning cybersecurity, refining my guitar skills, or studying physics for fun 😅",
       ],
     },
   ],
@@ -500,7 +491,7 @@ export const locations = {
   about: ABOUT_LOCATION,
   resume: RESUME_LOCATION,
   trash: TRASH_LOCATION,
-  nike: NIKE_PROJECT,
+  koru: KORU_PROJECT,
   ai: AI_PROJECT,
   food: FOOD_PROJECT,
 };
