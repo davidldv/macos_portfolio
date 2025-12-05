@@ -11,7 +11,7 @@ const Photos = () => {
     <div id="window-header">
       <WindowControls target="photos" />
 
-      <div className="w-full flex justify-end items-center gap-3 text-gray-500">
+      <div className="w-full flex justify-end items-center gap-3 text-gray-500 dark:text-gray-400">
         <Mail className="icon" />
         <Search className="icon" />
       </div>
@@ -24,7 +24,7 @@ const Photos = () => {
         <ul>
           {photosLinks.map(({ id, icon, title }) => (
             <li key={id}>
-              <img src={icon} alt={title} />
+              <img src={icon} alt={title} className="dark:invert" />
               <p>{title}</p>
             </li>
           ))}

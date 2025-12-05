@@ -9,7 +9,7 @@ const Contact = () => {
       <h2>Contact Me</h2>
     </div>
 
-    <div className="p-5 space-y-5">
+    <div className="p-5 space-y-5 dark:text-gray-300">
       <img src="/images/david.jpg" alt="David" className="w-20 rounded-full" />
 
       <h3>Let's connect!</h3>
@@ -18,11 +18,11 @@ const Contact = () => {
       <div className="flex flex-col gap-2 text-sm">
         <p className="flex items-center gap-2">
           <span className="font-semibold">Email:</span>
-          <a href="mailto:dlondon.dev@gmail.com" className="hover:underline">dlondon.dev@gmail.com</a>
+          <a href="mailto:dlondon.dev@gmail.com" className="hover:underline text-blue-600 dark:text-blue-400">dlondon.dev@gmail.com</a>
         </p>
         <p className="flex items-center gap-2">
           <span className="font-semibold">Phone:</span>
-          <a href="tel:+573172939347" className="hover:underline">+57 317 293 9347</a>
+          <a href="tel:+573172939347" className="hover:underline text-blue-600 dark:text-blue-400">+57 317 293 9347</a>
         </p>
       </div>
 
@@ -36,7 +36,7 @@ const Contact = () => {
               className="cursor-pointer"
               title={text}
             >
-              <img src={icon} alt={text} className="size-5" />
+              <img src={icon} alt={text} className="size-5 invert" />
               <p>{text}</p>
             </a>
           </li>

@@ -35,7 +35,7 @@ const Finder = () => {
             <img 
               src={item.icon} 
               alt={item.name} 
-              className="w-4"
+              className={clsx("w-4", item.icon.endsWith(".svg") && "dark:invert")}
             />
             <p className="text-sm font-medium truncate">{item.name}</p>
           </li>
@@ -50,7 +50,7 @@ const Finder = () => {
       <Search className="icon" />
     </div>
 
-    <div className="bg-white flex h-full">
+    <div className="flex h-full">
       <div className="sidebar">
         {renderList("Favorites", [locations.work, locations.about, locations.resume, locations.trash])}
         {renderList("Work", locations.work.children)}
@@ -60,10 +60,14 @@ const Finder = () => {
         {locations[activeLocation]?.children.map((item: any) => (
           <li 
             key={item.id} 
-            className={item.position} 
+            className={clsx("group", item.position)} 
             onClick={() => openItem(item)}
           >
-            <img src={item.icon} alt={item.name} />
+            <img 
+              src={item.icon} 
+              alt={item.name} 
+              className={clsx(item.icon.endsWith(".svg") && "dark:invert")}
+            />
             <p>{item.name}</p>
           </li>
         ))}
