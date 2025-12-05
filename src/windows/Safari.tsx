@@ -2,8 +2,13 @@ import { WindowControls } from "#components"
 import { blogPosts } from "#constants"
 import WindowWrapper from "#hoc/WindowWrapper"
 import { ChevronLeft, ChevronRight, Copy, MoveRight, PanelLeft, Plus, Search, Share, ShieldHalf } from "lucide-react"
+import { useLanguageStore } from "../store/language"
+import { translations } from "../constants/translations"
 
 const Safari = () => {
+  const { language } = useLanguageStore()
+  const t = translations[language]
+
   return <>
     <div id="window-header">
       <WindowControls target="safari" />
@@ -23,7 +28,7 @@ const Safari = () => {
 
           <input 
             type="text"
-            placeholder="Search or enter website name" 
+            placeholder={t.safari.placeholder} 
             className="flex-1" 
           />
         </div>
@@ -37,7 +42,7 @@ const Safari = () => {
     </div>
 
     <div className="blog">
-      <h2>My Developer Blog</h2>
+      <h2>{t.safari.blogTitle}</h2>
 
       <div className="space-y-8">
         {blogPosts.map(({ id, image, title, date, link  }) => (

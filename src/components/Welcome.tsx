@@ -1,6 +1,8 @@
 import { useRef } from "react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
+import { useLanguageStore } from "../store/language"
+import { translations } from "../constants/translations"
 
 const FONT_WEIGHTS = {
   subtitle: { min: 100, max: 400, default: 100 },
@@ -68,6 +70,8 @@ const setupTextHover = (container: HTMLElement, type: string) => {
 const Welcome = () => {
   const titleRef = useRef<HTMLHeadingElement>(null)
   const subtitleRef = useRef<HTMLParagraphElement>(null)
+  const { language } = useLanguageStore()
+  const t = translations[language]
 
   useGSAP(() => {
     const titleCleanup = setupTextHover(titleRef.current!, "title")
@@ -77,19 +81,19 @@ const Welcome = () => {
       titleCleanup?.()
       subtitleCleanup?.()
     }
-  }, [])
+  }, [language])
 
   return <section id="welcome">
     <p ref={subtitleRef}>
       {renderText(
-        "Hey, I'm David! Welcome to my",
+        t.welcome.subtitle,
         "text-3xl font-georama",
         100
       )}
     </p>
     <h1 ref={titleRef} className="mt-7">
       {renderText(
-        "portfolio.",
+        t.welcome.title,
         "text-9xl italic font-georama"
       )}
     </h1>

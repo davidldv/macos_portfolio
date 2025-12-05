@@ -3,7 +3,13 @@ import { immer } from "zustand/middleware/immer"
 
 import { INITIAL_Z_INDEX, WINDOW_CONFIG } from "#constants"
 
-export type WindowConfig = typeof WINDOW_CONFIG
+export type WindowConfig = {
+  [K in keyof typeof WINDOW_CONFIG]: {
+    isOpen: boolean
+    zIndex: number
+    data: any
+  }
+}
 export type WindowKey = keyof WindowConfig
 
 interface WindowState {

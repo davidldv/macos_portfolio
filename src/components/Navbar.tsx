@@ -1,29 +1,37 @@
 import dayjs from "dayjs"
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, Languages } from "lucide-react"
 import { navIcons, navLinks } from "#constants"
 import useWindowStore from "#store/windows"
 import { useThemeStore } from "../store/theme"
+import { useLanguageStore } from "../store/language"
+import { translations } from "../constants/translations"
 
 const Navbar = () => {
   const { openWindow } = useWindowStore()
   const { isDarkMode, toggleTheme } = useThemeStore()
+  const { language, toggleLanguage } = useLanguageStore()
+  const t = translations[language]
 
   return (
     <nav>
       <div>
         <img src="/images/logo.svg" alt="logo" className="dark:invert" />
-        <p className="font-bold dark:text-white">David's Portfolio</p>
+        <p className="font-bold dark:text-white">{t.navbar.title}</p>
 
         <ul>
-          {navLinks.map(({ id, name, type }) => (
+          {navLinks.map(({ id, type }) => (
             <li key={id} onClick={() => openWindow(type)}>
-              <p>{name}</p>
+              <p>{t.navbar[type as keyof typeof t.navbar]}</p>
             </li>
           ))}
         </ul>
       </div>
 
       <div>
+        <button onClick={toggleLanguage} className="cursor-pointer p-1 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors" title="Switch Language">
+          <Languages size={16} className="text-black dark:text-white" />
+        </button>
+
         <button onClick={toggleTheme} className="cursor-pointer p-1 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
           {isDarkMode ? <Sun size={16} className="text-white" /> : <Moon size={16} className="text-black" />}
         </button>

@@ -4,9 +4,14 @@ import { WindowControls } from "#components"
 import WindowWrapper from "#hoc/WindowWrapper"
 import useWindowStore from "#store/windows"
 import { gallery, photosLinks } from "#constants"
+import { useLanguageStore } from "../store/language"
+import { translations } from "../constants/translations"
 
 const Photos = () => {
   const { openWindow } = useWindowStore()
+  const { language } = useLanguageStore()
+  const t = translations[language]
+
   return <>
     <div id="window-header">
       <WindowControls target="photos" />
@@ -19,13 +24,13 @@ const Photos = () => {
 
     <div className="flex w-full">
       <div className="sidebar">
-        <h2>Photos</h2>
+        <h2>{t.photos.title}</h2>
 
         <ul>
           {photosLinks.map(({ id, icon, title }) => (
             <li key={id}>
               <img src={icon} alt={title} className="dark:invert" />
-              <p>{title}</p>
+              <p>{t.photos.sidebar[title as keyof typeof t.photos.sidebar] || title}</p>
             </li>
           ))}
         </ul>

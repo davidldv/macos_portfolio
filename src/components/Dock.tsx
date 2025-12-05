@@ -4,6 +4,8 @@ import { dockApps } from "#constants"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react";
 import useWindowStore from "#store/windows";
+import { useLanguageStore } from "../store/language";
+import { translations } from "../constants/translations";
 
 interface DockApp {
   id: string;
@@ -12,6 +14,8 @@ interface DockApp {
 
 const Dock = () => {
   const { windows, openWindow, closeWindow } = useWindowStore()
+  const { language } = useLanguageStore()
+  const t = translations[language]
   const dockRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
@@ -95,16 +99,16 @@ const Dock = () => {
             <button 
               type="button"
               className="dock-icon"
-              aria-label={name}
+              aria-label={t.dock[id as keyof typeof t.dock] || name}
               data-tooltip-id="dock-tooltip"
-              data-tooltip-content={name}
+              data-tooltip-content={t.dock[id as keyof typeof t.dock] || name}
               data-tooltip-delay-show={150}
               disabled={!canOpen}
               onClick={() => toggleApp({ id, canOpen })}
             >
               <img 
                 src={`/images/${icon}`}
-                alt={name}
+                alt={t.dock[id as keyof typeof t.dock] || name}
                 loading="lazy"
                 className={canOpen ? "" : "opacity-60"} 
               />
