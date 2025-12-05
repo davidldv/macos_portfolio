@@ -1,4 +1,5 @@
 import dayjs from "dayjs"
+import "dayjs/locale/es"
 import { Moon, Sun, Languages } from "lucide-react"
 import { navIcons, navLinks } from "#constants"
 import useWindowStore from "#store/windows"
@@ -44,7 +45,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <time>{dayjs().format("ddd MMM D h:mm A")}</time>
+        <time>{dayjs().locale(language).format(language === 'es' ? "ddd D MMM h:mm A" : "ddd MMM D h:mm A")}</time>
       </div>
 
     </nav>
